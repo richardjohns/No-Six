@@ -20,4 +20,25 @@ router.put('/users/:id', (req, res) => {
     })
 })
 
+router.post('/users/:id', (req, res) => {
+  db.addWeeklyExpense(req.params.id, req.body)
+    .then(() => {
+      res.status(201).end()
+    })
+    .catch(() => {
+      res.staus(500).end()
+    })
+})
+
+// this delete route does not work :(
+// router.delete('users/:id', (req, res) => {
+//   db.deleteExpense(req.body)
+//     .then(() => {
+//       res.status(201).end()
+//     })
+//     .catch(() => {
+//       res.status(500).end()
+//     })
+// })
+
 module.exports = router

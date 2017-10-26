@@ -10,15 +10,32 @@ function getWeeklyExpenses (id) {
 
 function updateWeeklyExpenses (id, newData) {
   return knex('expenses')
-    .where('id', id)
+    .where('id', newData.id)
     .update({
       type: newData.type,
       value: newData.value,
-      contractor_id: newData.contractorId
+      contractor_id: id
     })
 }
 
+function addWeeklyExpense (id, expense) {
+  return knex('expenses')
+    .insert({
+      type: expense.type,
+      value: expense.value,
+      contractor_id: id
+    })
+}
+
+// function deleteExpense (data) {
+//   return knex('expenses')
+//     .where('id', data.id)
+//     .del()
+// }
+
 module.exports = {
   updateWeeklyExpenses,
+  addWeeklyExpense,
+  // deleteExpense,
   getWeeklyExpenses
 }
