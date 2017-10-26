@@ -3,7 +3,7 @@ const router = require('express').Router()
 const db = require('../db/expenses')
 
 router.get('/users/:id', (req, res) => {
-  db.getWeeklyExpenses(req.params.user)
+  db.getWeeklyExpenses(req.params.id)
     .then(result => res.json(result))
     .catch(() => {
       res.status(500).end()

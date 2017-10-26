@@ -16,7 +16,7 @@ router.post('/:id', (req, res) => {
     transactionAmount: req.body.transactionAmount,
     transactionComment: req.body.transactionComment
   }
-  db.addContractorTransaction(req.params.id, newTrans)
+  db.addContractorTransaction(newTrans)
     .then(() => {
       res.status(201).end()
     })
