@@ -2,12 +2,12 @@ import request from 'superagent'
 import {saveUserToken} from '../utils/auth'
 import {receiveLogin} from './login'
 
-export function registerUserRequest ({user_name, password}) {
+export function registerUserRequest ({username, password}) {
   return (dispatch) => {
     request
       .post('/api/auth/register')
       .send({
-        user_name, password
+        username, password
       })
       .end((err, res) => {
         if (err) {

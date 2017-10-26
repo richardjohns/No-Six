@@ -1,5 +1,5 @@
 var jwt = require('jsonwebtoken')
-var {getUserByName} = require('../db/users')
+var {getUserByName} = require('../db/contractors')
 var verifyJwt = require('express-jwt')
 var {compare} = require('./hash')
 

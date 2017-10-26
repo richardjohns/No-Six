@@ -19,14 +19,17 @@ class Register extends React.Component {
   submit(e) {
     e.preventDefault()
     e.target.reset()
-    let {contractorName, password, confirm_password} = this.state
-    if (password == confirm_password) this.props.dispatch(registerUserRequest({contractorName, password}))
+    let {username, password, confirm_password} = this.state
+    if (password == confirm_password) this.props.dispatch(registerUserRequest({username, password}))
   }
   render() {
     return (
       <form className="Register" onSubmit={this.submit}>
+        <label>Name:
+          <input type="text" name="name" onChange={this.updateDetails}/>
+        </label><br/>
         <label>Username:
-          <input type="text" name="contractorName" onChange={this.updateDetails}/>
+          <input type="text" name="username" onChange={this.updateDetails}/>
         </label><br/>
         <label>Password:
           <input type="password" name="password" onChange={this.updateDetails}/>

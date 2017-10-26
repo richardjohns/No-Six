@@ -18,14 +18,14 @@ class Login extends React.Component {
   submit(e) {
     e.preventDefault()
     let {contractorName, password} = this.state
-    this.props.dispatch(loginUser({contractorName, password}))
+    this.props.dispatch(loginUser({username, password}))
 
   }
   render() {
     return (
       <form className="Login" onSubmit={this.submit}>
         <label>Username:
-          <input type="text" name="contractorName" onChange={this.updateDetails}/>
+          <input type="text" name="username" onChange={this.updateDetails}/>
         </label><br/>
         <label>Password:
           <input type="password" name="password" onChange={this.updateDetails}/>
