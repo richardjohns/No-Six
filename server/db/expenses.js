@@ -8,7 +8,7 @@ function getWeeklyExpenses (id) {
     .where('contractor_id', id)
 }
 
-function updateWeeklyExpenses (id, newData) {
+function updateWeeklyExpense (id, newData) {
   return knex('expenses')
     .where('id', id)
     .update({
@@ -19,6 +19,6 @@ function updateWeeklyExpenses (id, newData) {
 }
 
 module.exports = {
-  updateWeeklyExpenses,
+  updateWeeklyExpense,
   getWeeklyExpenses
 }

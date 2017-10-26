@@ -11,7 +11,7 @@ router.get('/users/:id', (req, res) => {
 })
 
 router.put('/users/:id', (req, res) => {
-  db.updateWeeklyExpenses(Number(req.params.id), req.body)
+  db.updateWeeklyExpense(Number(req.params.id), req.body)
     .then(() => {
       res.status(201).end()
     })
