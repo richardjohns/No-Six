@@ -5,17 +5,20 @@ import {logoutUser} from '../actions/logout'
 
 function Nav (props) {
   return (
-    <div className="Nav">
-      <Link to="/home">Home</Link>{" | "}
+    <nav className="navbar" role="navigation" aria-label="main navigation">
+      <div className="navbar-brand">
+        <img className="bannerimg" src="/images/nosixlogo.png" />
+      </div>
+      <br/>
+      <Link to="/home">Home</Link>{' | '}
       {props.auth.isAuthenticated
         ? <button onClick={() => props.dispatch(logoutUser())}>Logout</button>
         : <div>
-          <Link to="/login">Login</Link>{" | "}
+          <Link to="/login">Login</Link>{' | '}
           <Link to="/register">Register</Link>
         </div>
       }
-
-    </div>
+    </nav>
   )
 }
 
