@@ -5,16 +5,17 @@ const knex = require('knex')(config)
 
 function getWeeklyExpenses (id) {
   return knex('expenses')
-    .where('user_id', id)
+    .where('contractor_id', id)
     .first()
 }
 
 function updateWeeklyExpenses (id, newData) {
   return knex('expenses')
-    .where('user_id', id)
+    .where('contractor_id', id)
     .update({
       type: newData.type,
-      value: newData.value
+      value: newData.value,
+      contractor_id: id
     })
 }
 
