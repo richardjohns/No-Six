@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {addExpense} from '../actions/expenses'
+import {sumTotal} from '../utils/sumtotal'
 
 class Expenses extends React.Component {
   constructor (props) {
@@ -24,13 +25,8 @@ class Expenses extends React.Component {
     this.props.dispatch(addExpense(this.state))
   }
 
-  sumTotal () {
-    return this.props.expenses.reduce((totalExpense, expense) => {
-      return totalExpense + parseFloat(expense.amount)
-    }, 0)
-  }
-
   render () {
+    const total = sumTotal(this.props.expenses)
     return (
       <div>
         <table className="table is-striped">
@@ -44,9 +40,9 @@ class Expenses extends React.Component {
           </tbody>
         </table>
         <br/><hr/>
-        Total Weekly: {this.sumTotal()}
+        Total Weekly: {total}
         <br/>
-        Total Yearly: {this.sumTotal() * 52}
+        Total Yearly: {total * 52}
         <br/>
         <br/>
         <form onSubmit={this.submitExpense}>
