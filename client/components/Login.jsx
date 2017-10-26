@@ -23,14 +23,15 @@ class Login extends React.Component {
   }
   render () {
     return (
-      <form className="Login" onSubmit={this.submit}>
+      <form className="field" onSubmit={this.submit}>
         <label>Userame:
-          <input type="text" name="username" onChange={this.updateDetails}/>
+          <input className="input" type="text" name="username" onChange={this.updateDetails}/>
         </label><br/>
         <label>Password:
-          <input type="password" name="password" onChange={this.updateDetails}/>
+          <input className="input" type="password" name="password" onChange={this.updateDetails}/>
         </label><br/>
-        <Link to="/home"><input type="submit" /></Link>
+        <br/>
+        <Link to="/home"><input className="button is-medium" type="submit" /></Link>
       </form>
     )
   }
