@@ -12,6 +12,7 @@ class Expenses extends React.Component {
     }
     this.submitExpense = this.submitExpense.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.updateExpense = this.updateExpense.bind(this)
   }
 
   handleChange (evt) {
@@ -25,6 +26,11 @@ class Expenses extends React.Component {
     this.props.dispatch(addExpense(this.state))
   }
 
+  updateExpense (evt) {
+    evt.preventDefault()
+    this.props.dispatch(updateExpense())
+  }
+
   render () {
     const total = sumTotal(this.props.expenses)
     return (
@@ -35,7 +41,7 @@ class Expenses extends React.Component {
           </thead>
           <tbody>
             {this.props.expenses.map(expense => {
-              return <tr> <td >{expense.expense}</td> <td>{expense.amount}</td></tr>
+              return <tr> <td >{expense.expense}</td> <td>{expense.amount}</td><td><button className="button is-text" onClick={this.updateExpense}>Edit</button></td></tr>
             })}
           </tbody>
         </table>
