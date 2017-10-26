@@ -70,6 +70,7 @@ class Expenses extends React.Component {
 function mapStateToProps (state) {
   return {
     expenses: state.expenses
+    //need to pass in the id
   }
 }
 
