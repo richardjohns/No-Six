@@ -24,21 +24,30 @@ class Expenses extends React.Component {
     this.props.dispatch(addExpense(this.state))
   }
 
+  sumTotal () {
+    return this.props.expenses.reduce((totalExpense, expense) => {
+      return totalExpense + parseFloat(expense.amount)
+    }, 0)
+  }
+
   render () {
     return (
       <div>
-        <table className="table">
+        <table className="table is-striped">
           <thead>
-            <thread><tr><th>Expense</th><th>Amount</th></tr></thread>
+            <tr><th>Expense</th><th>Amount</th></tr>
           </thead>
           <tbody>
-            <tr>
-              {this.props.expenses.map(expense => {
-                return <td >{expense.expense} {expense.amount}</td>
-              })}
-            </tr>
+            {this.props.expenses.map(expense => {
+              return <tr> <td >{expense.expense}</td> <td>{expense.amount}</td></tr>
+            })}
           </tbody>
         </table>
+        <br/><hr/>
+        Total Weekly: {this.sumTotal()}
+        <br/>
+        Total Yearly: {this.sumTotal() * 52}
+        <br/>
         <br/>
         <form onSubmit={this.submitExpense}>
           <div className="field">
