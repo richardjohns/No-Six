@@ -4,14 +4,17 @@ import {HashRouter as Router, Route} from 'react-router-dom'
 import Login from './Login'
 import Register from './Register'
 import Nav from './Nav'
+import FinanceBar from './FinanceBar'
 
 const App = () => (
   <Router>
-    <div className='app-container'>
-      <h1>Hello World</h1>
+    <div className="container">
+      <h1 className="title is-1">No Six</h1>
       <Route path="/" component={Nav} />
       <Route path="/login" component={Login} />
       <Route path="/Register" component={Register} />
+      <hr/>
+      <Route exactpath="/" component={FinanceBar} />
     </div>
   </Router>
 )
