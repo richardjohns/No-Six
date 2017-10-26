@@ -6,7 +6,7 @@ import {logoutUser} from '../actions/logout'
 function Nav (props) {
   return (
     <div className="Nav">
-      <Link to="/">Home</Link>{" | "}
+      <Link to="/home">Home</Link>{" | "}
       {props.auth.isAuthenticated
         ? <button onClick={() => props.dispatch(logoutUser())}>Logout</button>
         : <div>

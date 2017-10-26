@@ -1,17 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-class FinanceBar extends React.Component {
-  constructor(props) {
+class Ledger extends React.Component {
+  constructor (props) {
     super(props)
     this.state = {
     }
   }
-  render() {
+  render () {
     return (
-      <div><progress className="progress is-large" value="60" max="100"></progress></div>
+      <div>Ledger Page</div>
     )
   }
 }
 
-export default connect()(FinanceBar)
+export default connect()(Ledger)
