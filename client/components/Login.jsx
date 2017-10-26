@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {loginUser} from '../actions/login'
 
 class Login extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       user_name: '',
@@ -12,16 +12,15 @@ class Login extends React.Component {
     this.updateDetails = this.updateDetails.bind(this)
     this.submit = this.submit.bind(this)
   }
-  updateDetails(e) {
+  updateDetails (e) {
     this.setState({[e.target.name]: e.target.value})
   }
-  submit(e) {
+  submit (e) {
     e.preventDefault()
     let {user_name, password} = this.state
     this.props.dispatch(loginUser({user_name, password}))
-
   }
-  render() {
+  render () {
     return (
       <form className="Login" onSubmit={this.submit}>
         <label>Username:
