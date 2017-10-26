@@ -1,10 +1,12 @@
 import request from 'superagent'
 
 
+export const NEW_TRANSACTION = 'NEW_TRANSACTION'
+
 function receiveLedgerEntry(entry){
 
     return {
-        type:'NEW_LEDGER_ENTRY',
+        type: NEW_TRANSACTION,
         contractor_name:entry.contractor_name,
         amount:entry.amount,
         comment:entry.comment
@@ -15,9 +17,10 @@ function receiveLedgerEntry(entry){
 export function submitLedgerEntry({ contractor_name, amount, comment }) {
     return (dispatch) => {
         console.log(`sending:  contractor_name ${contractor_name}, amount ${amount}, comment ${comment}`)
+        
         setImmediate(()=>{
             dispatch(receiveLedgerEntry({ contractor_name, amount, comment }))
-        }
+        })
         // request
         //     .post('/api/ledger')
         //     .send({

@@ -1,7 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import {Link} from 'react-router-dom'
+import {submitLedgerEntry} from '../actions/submitLedgerEntry' 
 
-export class LedgerEntryPanel extends React.Component {
+class LedgerEntryPanel extends React.Component {
 
     constructor(props) {
         super(props)
@@ -26,23 +28,30 @@ export class LedgerEntryPanel extends React.Component {
 
     render(){
         return (
-        <form className="Login" onSubmit={this.submit}>
+
+          <div>
+            <form className="form" onSubmit={this.submit}>
             
-            <label>Contractor:
-                <input type="text" name="contractor_name" onChange={this.updateDetails} />
+            <label className='label' >Contractor:
+                <input className='input' type="text" name="contractor_name" onChange={this.updateDetails} />
             </label><br />
             
-            <label>Amount:
-                <input type="number" name="amount" onChange={this.updateDetails} />
+            <label className='label'>Amount:
+                <input className='input' type="number" name="amount" onChange={this.updateDetails} />
             </label><br />
             
-            <label>Comment:
-                <input type="text" name ='comment' onChange={this.updateDetails}/>
+            <label className='label' >Comment:
+                <input className='input' type="text" name ='comment' onChange={this.updateDetails}/>
             </label><br/>
             
-            <input type="submit" />
+            <input className='button' type="submit" />
             </form>
+
+            <Link to='/ledger'>Back to Ledger</Link>
+            </div>
         )
 
     }
 }
+
+export default connect()(LedgerEntryPanel)
