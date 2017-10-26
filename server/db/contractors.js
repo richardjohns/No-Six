@@ -1,11 +1,11 @@
 var hash = require('../auth/hash')
 
-function createUser (username, password, db) {
+function createUser (name, username, password, db) {
   return new Promise ((resolve, reject) => {
     hash.generate(password, (err, hash) => {
       if (err) reject(err)
       db('contractors')
-        .insert({username, password:hash})
+        .insert({name, username, password:hash})
         .then(ids => resolve(ids[0]))
     })
 

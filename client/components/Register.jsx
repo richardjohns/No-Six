@@ -6,7 +6,8 @@ class Register extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      contractorName: '',
+      name: '',
+      username: '',
       password: '',
       confirm_password: ''
     }
@@ -19,8 +20,8 @@ class Register extends React.Component {
   submit(e) {
     e.preventDefault()
     e.target.reset()
-    let {username, password, confirm_password} = this.state
-    if (password == confirm_password) this.props.dispatch(registerUserRequest({username, password}))
+    let {name, username, password, confirm_password} = this.state
+    if (password == confirm_password) this.props.dispatch(registerUserRequest({name, username, password}))
   }
   render() {
     return (
@@ -28,7 +29,7 @@ class Register extends React.Component {
         <label>Name:
           <input type="text" name="name" onChange={this.updateDetails}/>
         </label><br/>
-        <label>Username:
+        <label>username:
           <input type="text" name="username" onChange={this.updateDetails}/>
         </label><br/>
         <label>Password:

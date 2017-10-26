@@ -5,9 +5,9 @@ var {compare} = require('./hash')
 
 function issue (req, res) {
   console.log(req.body);
-  getUserByName(req.body.user_name, req.app.get('db'))
+  getUserByName(req.body.username, req.app.get('db'))
     .then(user => {
-      compare(req.body.password, user.hash, (err, match) => {
+      compare(req.body.password, user.password, (err, match) => {
         if (err) res.status(500).json({message: err.message})
         else if (!match) res.status(400).json({message: 'password is incorrect'})
         else {
