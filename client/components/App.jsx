@@ -11,7 +11,6 @@ import Ledger from './Ledger'
 const App = () => (
   <Router>
     <div className="container">
-      <h1 className="title is-1">No Six</h1>
       <Route path="/" component={Nav} />
       <Route path="/login" component={Login} />
       <Route path="/Register" component={Register} />

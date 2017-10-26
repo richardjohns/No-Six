@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {addExpense} from '../actions/expenses'
+import {addExpenseApi} from '../actions/expenses'
 
 class Expenses extends React.Component {
   constructor (props) {
@@ -21,7 +21,7 @@ class Expenses extends React.Component {
 
   submitExpense (evt) {
     evt.preventDefault()
-    this.props.dispatch(addExpense(this.state))
+    this.props.dispatch(addExpenseApi(this.state))
   }
 
   sumTotal () {

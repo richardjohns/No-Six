@@ -1,7 +1,27 @@
-body {
+/* body {
   background-color: "blue";
 }
 
+
 button {
   background-color: "red";
+} */
+
+.navbar-brand {
+  background-color: black;
+  margin-left: 20px;
+  /* width: 40%;
+  height: 100px; */
 }
+
+/* website colours
+#DDAA66
+#66DDAA */
+
+.bannerimg {
+  height: 100px;
+}
+
+/* .nav {
+  display: flex;
+} */

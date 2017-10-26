@@ -5,4 +5,9 @@ export function getWeeklyExpenses (id) {
 }
 export function updateWeeklyExpenses (id, expense) {
   return request.put(`/api/contractor/expenses/users/${id}`)
+  .send(expense)
+}
+export function addWeeklyExpenses (id, expense) {
+  return request.post(`/api/contractor/expenses/users/${id}`)
+  .send(expense)
 }
