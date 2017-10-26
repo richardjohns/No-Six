@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {registerUserRequest} from '../actions/register'
+import {Link} from 'react-router-dom'
 
 class Register extends React.Component {
   constructor(props) {
@@ -38,7 +39,7 @@ class Register extends React.Component {
         <label>Confirm:
           <input type="password" name="confirm_password" onChange={this.updateDetails}/>
         </label><br/>
-          <input type="submit" />
+        <Link to="/home"><input type="submit" /></Link>
       </form>
     )
   }
