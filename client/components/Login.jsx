@@ -6,7 +6,7 @@ class Login extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      user_name: '',
+      contractorName: '',
       password: ''
     }
     this.updateDetails = this.updateDetails.bind(this)
@@ -17,15 +17,15 @@ class Login extends React.Component {
   }
   submit(e) {
     e.preventDefault()
-    let {user_name, password} = this.state
-    this.props.dispatch(loginUser({user_name, password}))
+    let {contractorName, password} = this.state
+    this.props.dispatch(loginUser({contractorName, password}))
 
   }
   render() {
     return (
       <form className="Login" onSubmit={this.submit}>
         <label>Username:
-          <input type="text" name="user_name" onChange={this.updateDetails}/>
+          <input type="text" name="contractorName" onChange={this.updateDetails}/>
         </label><br/>
         <label>Password:
           <input type="password" name="password" onChange={this.updateDetails}/>
