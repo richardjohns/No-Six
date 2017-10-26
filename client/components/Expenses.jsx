@@ -27,12 +27,19 @@ class Expenses extends React.Component {
   render () {
     return (
       <div>
-        <ul>
-          {this.props.expenses.map(expense => {
-            return <li >{expense.expense}: {expense.amount}</li>
-          })}
-        </ul>
-
+        <table className="table">
+          <thead>
+            <thread><tr><th>Expense</th><th>Amount</th></tr></thread>
+          </thead>
+          <tbody>
+            <tr>
+              {this.props.expenses.map(expense => {
+                return <td >{expense.expense} {expense.amount}</td>
+              })}
+            </tr>
+          </tbody>
+        </table>
+        <br/>
         <form onSubmit={this.submitExpense}>
           <div className="field">
             <label className="label">Expense</label>
