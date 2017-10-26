@@ -7,6 +7,7 @@ import Nav from './Nav'
 import FinancePage from './FinancePage'
 import Expenses from './Expenses'
 import Ledger from './Ledger'
+import LedgerEntryPanel from './LedgerEntryPanel'
 
 const App = () => (
   <Router>
@@ -18,6 +19,7 @@ const App = () => (
       <Route path="/home" component={FinancePage} />
       <Route path="/expenses" component={Expenses} />
       <Route path="/ledger" component={Ledger} />
+      <Route path="/ledgerEntry" component={LedgerEntryPanel}/>
     </div>
   </Router>
 )
