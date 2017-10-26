@@ -11,7 +11,7 @@ var server = express()
 server.use(cors('*'))
 
 server.use(passport.initialize())
-server.use(express.static(path.join(__dirname, '../public')))
+server.use(express.static(path.join(__dirname, 'public')))
 server.use(bodyParser.json())
 
 server.use('/api/contractor/expenses', expenses)
