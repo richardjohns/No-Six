@@ -73,7 +73,7 @@ class Expenses extends React.Component {
 
 function mapStateToProps (state) {
   return {
-    expenses: state.expenses
+    expenses: state.expenses || {}
   }
 }
 
