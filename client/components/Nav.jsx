@@ -14,8 +14,15 @@ function Nav (props) {
       {props.auth.isAuthenticated
         ? <button className="button is-light" onClick={() => props.dispatch(logoutUser())}>Logout</button>
         : <div>
+<<<<<<< refs/remotes/origin/master
           <Link to="/login">Login</Link>{' | '}
           <Link to="/register">Register</Link>
+=======
+          <Link to="/login">Login</Link>{" | "}
+          <Link to="/register">Register</Link>{" | "}
+          <Link to="/ledgerEntry">ledger entry</Link>
+
+>>>>>>> add ledger entry page
         </div>
       }
     </nav>
