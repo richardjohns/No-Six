@@ -12,7 +12,7 @@ function Nav (props) {
       <br/>
       <Link to="/home">Home</Link>{' | '}
       {props.auth.isAuthenticated
-        ? <button onClick={() => props.dispatch(logoutUser())}>Logout</button>
+        ? <button className="button is-light" onClick={() => props.dispatch(logoutUser())}>Logout</button>
         : <div>
           <Link to="/login">Login</Link>{' | '}
           <Link to="/register">Register</Link>
