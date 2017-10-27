@@ -25,6 +25,11 @@ class Expenses extends React.Component {
     this.props.dispatch(addExpense(this.state))
   }
 
+  // updateExpense(evt) {
+  //   evt.preventDefault()
+  //   this.props.dispatch(updateExp(this.props.currentExpense.id, this.state))
+  // }
+
   render () {
     const total = sumTotal(this.props.expenses)
     return (
@@ -69,7 +74,7 @@ class Expenses extends React.Component {
 
 function mapStateToProps (state) {
   return {
-    expenses: state.expenses
+    expenses: state.expenses || {}
   }
 }
 
