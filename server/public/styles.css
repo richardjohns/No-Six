@@ -30,3 +30,8 @@ button {
   margin: 20px;
 }
 
+.tile {
+  width: 98%;
+  margin: 10px;
+  height: 200px;
+}
