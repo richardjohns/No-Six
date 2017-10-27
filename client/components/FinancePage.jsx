@@ -17,7 +17,7 @@ class FinancePage extends React.Component {
         <br />
         <br />
         <div className="tile is-ancestor">
-          <div className="tile is-4 is-vertical is-parent">
+          <div className="tile is-16 is-vertical is-parent">
             <div className="tile is-child box">
               <p className="title">Ledger</p> <br/>
               <p className="subtitle">Here you can work out your gross earnings and see how your progress bar changes ! This highlights your financial goals and process your current work. Good luck saving !</p>
