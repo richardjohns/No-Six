@@ -13,7 +13,7 @@ class FinancePage extends React.Component {
   render () {
     return (
       <div>
-        <progress className="progress is-large is-primary" value="60" max={this.props.total * 52 || 100}></progress> <div className="level-right">Total:{this.props.total * 52}</div>
+        <progress className="progress is-large is-primary" value={this.props.grossIncome} max={this.props.total*52 || 100}></progress> <div className="level-right">Total:{this.props.total * 52}</div>
         <br />
         <br />
         <div className="tile is-ancestor">
@@ -41,7 +41,8 @@ class FinancePage extends React.Component {
 
 function mapStateToProps (state) {
   return {
-    total: sumTotal(state.expenses)
+    total: sumTotal(state.expenses),
+    grossIncome: sumTotal(state.transactions)
   }
 }
 
