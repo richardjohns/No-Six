@@ -11,7 +11,7 @@ function register (req, res, next) {
     .then(exists => {
       if (exists) return res.status(400).send({message: "User exists"})
       createUser(name, username, password, req.app.get('db'))
-        .then(() => next())
+        .then((id) => next())
     })
     .catch(err => res.status(500).send({message: err.message}))
 }

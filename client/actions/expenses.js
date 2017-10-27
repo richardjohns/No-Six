@@ -9,12 +9,12 @@ export const addExpense = (expense) => {
   }
 }
 
-export function addExpenseApi (id, expense) {
+export function addExpenseApi (expense) {
   return dispatch => {
-    addWeeklyExpenses(id, expense)
-      .then(res => {
+    addWeeklyExpenses(expense)
+      .then(() => {
         dispatch(addExpense(expense))
       })
-      .catch(() => res.status(500))
+      .catch((err) => console.log(err.message))
   }
 }

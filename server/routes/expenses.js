@@ -1,4 +1,5 @@
 const router = require('express').Router()
+const token = require('../auth/token')
 
 const db = require('../db/expenses')
 
@@ -10,8 +11,8 @@ router.get('/users/:id', (req, res) => {
     })
 })
 
-router.put('/users/:id', (req, res) => {
-  db.updateWeeklyExpense(Number(req.params.id), req.body)
+router.put('/users', token.decode, (req, res) => {
+  db.updateWeeklyExpense(Number(req.user.id), req.body)
     .then(() => {
       res.status(201).end()
     })
@@ -20,8 +21,9 @@ router.put('/users/:id', (req, res) => {
     })
 })
 
-router.post('/users/:id', (req, res) => {
-  db.addWeeklyExpense(req.params.id, req.body)
+router.post('/users', token.decode, (req, res) => {
+  console.log(req.user)
+  db.addWeeklyExpense(Number(req.user.id), req.body)
     .then((id) => {
       res.json({newId: id[0]}).end()
     })

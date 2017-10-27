@@ -5,6 +5,7 @@ var cors = require('cors')
 var passport = require('passport')
 var expenses = require('./routes/expenses')
 var ledger = require('./routes/ledger')
+var currentUser = require('./routes/currentUser')
 
 var server = express()
 
@@ -17,6 +18,7 @@ server.use(bodyParser.json())
 server.use('/api/contractor/expenses', expenses)
 server.use('/api/ledger', ledger)
 server.use('/api/auth', require('./routes/auth'))
+server.use('/api/v1/users/', currentUser)
 
 server.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './public/index.html'))

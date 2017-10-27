@@ -12,8 +12,8 @@ function updateWeeklyExpense (id, newData) {
   return knex('expenses')
     .where('id', newData.id)
     .update({
-      type: newData.type,
-      value: newData.value,
+      type: newData.expense,
+      value: newData.amount,
       contractor_id: id
     })
 }
@@ -21,8 +21,8 @@ function updateWeeklyExpense (id, newData) {
 function addWeeklyExpense (id, expense) {
   return knex('expenses')
     .insert({
-      type: expense.type,
-      value: expense.value,
+      type: expense.expense,
+      value: expense.amount,
       contractor_id: id
     })
 }
