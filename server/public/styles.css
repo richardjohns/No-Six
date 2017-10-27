@@ -31,7 +31,11 @@ button {
 }
 
 .tile {
-  width: 98%;
-  margin: 10px;
+  width: 100%;
+  margin-bottom: 10px;
   height: 200px;
-}
+ }
+
+/* .progress {
+
+} */

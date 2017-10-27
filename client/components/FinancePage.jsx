@@ -13,7 +13,7 @@ class FinancePage extends React.Component {
   render () {
     return (
       <div>
-        <progress className="progress is-large" value="60" max={this.props.total || 100}></progress> <div className="level-right">Total:{this.props.total * 52}</div>
+        <progress className="progress is-large is-primary" value="60" max={this.props.total || 100}></progress> <div className="level-right">Total:{this.props.total * 52}</div>
         <br />
         <br />
         <div className="tile is-ancestor">
