@@ -25,3 +25,17 @@ button {
 /* .nav {
   display: flex;
 } */
+
+.navbar {
+  margin: 20px;
+}
+
+.tile {
+  width: 100%;
+  margin-bottom: 10px;
+  height: 200px;
+ }
+
+.footer {
+  margin-top: 300px;
+}

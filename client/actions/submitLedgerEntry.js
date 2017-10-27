@@ -16,25 +16,19 @@ function receiveLedgerEntry(entry){
 
 export function submitLedgerEntry({ contractor_name, amount, comment }) {
     return (dispatch) => {
-        console.log(`sending:  contractor_name ${contractor_name}, amount ${amount}, comment ${comment}`)
-        
-        setImmediate(()=>{
-            dispatch(receiveLedgerEntry({ contractor_name, amount, comment }))
-        })
-        // request
-        //     .post('/api/ledger')
-        //     .send({
-        //         contractor_name, amount, comment
-        //     })
-        //     .end((err, res) => {
-        //         if (err) {
-        //             alert("didn't work")
-        //         }
-        //         else {
-
-        //             dispatch(receiveLedgerEntry({ contractor_name, amount, comment }))
-        //             document.location = "/ledger"
-        //         }
-        //     })
+        let apiPostData = { contractorId: contractor_name, transactionAmount: amount, transactionComment: comment }
+        request
+            .post(`/api/ledger/${contractor_name}`)
+            .send(apiPostData)
+            .end((err, res) => {
+                if (err) {
+                    alert("Invalid transaction")
+                }
+                else {
+                    dispatch(receiveLedgerEntry({
+                        contractor_name, amount, comment
+                    }))
+                }
+            })
     }
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {loginUser} from '../actions/login'
+import {Link} from 'react-router-dom'
 
 class Login extends React.Component {
   constructor (props) {
@@ -22,14 +23,15 @@ class Login extends React.Component {
   }
   render () {
     return (
-      <form className="Login" onSubmit={this.submit}>
+      <form className="field" onSubmit={this.submit}>
         <label>Userame:
-          <input type="text" name="username" onChange={this.updateDetails}/>
+          <input className="input" type="text" name="username" onChange={this.updateDetails}/>
         </label><br/>
         <label>Password:
-          <input type="password" name="password" onChange={this.updateDetails}/>
+          <input className="input" type="password" name="password" onChange={this.updateDetails}/>
         </label><br/>
-        <input type="submit" />
+        <br/>
+        <Link to="/home"><input className="button is-medium" type="submit" /></Link>
       </form>
     )
   }
