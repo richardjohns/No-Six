@@ -25,10 +25,28 @@ class Expenses extends React.Component {
     this.props.dispatch(addExpense(this.state))
   }
 
+  // updateExpense(evt) {
+  //   evt.preventDefault()
+  //   this.props.dispatch(updateExp(this.props.currentExpense.id, this.state))
+  // }
+
   render () {
     const total = sumTotal(this.props.expenses)
     return (
       <div>
+        <section className="hero is-primary">
+          <div className="hero-body">
+            <div className="container">
+              <h1 className="title">
+                Expenses
+              </h1>
+              <h2 className="subtitle">
+                Please fill out your expenses.
+              </h2>
+            </div>
+          </div>
+        </section>
+        <br/>
         <table className="table is-striped">
           <thead>
             <tr><th>Expense</th><th>Amount</th></tr>
@@ -58,7 +76,7 @@ class Expenses extends React.Component {
             </div>
             <div>
               <br/>
-              <input className="button is-medium is-success" type="submit" value="Submit"/>
+              <input className="button is-medium is-primary" type="submit" value="Submit"/>
             </div>
           </div>
         </form>
@@ -69,7 +87,7 @@ class Expenses extends React.Component {
 
 function mapStateToProps (state) {
   return {
-    expenses: state.expenses
+    expenses: state.expenses || {}
   }
 }
 
